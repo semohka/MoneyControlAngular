@@ -1,0 +1,18 @@
+<h2>Магазины</h2>
+<label for="addShopInput">Добавь новый магазин в список</label>
+
+<input
+  #newShop
+  placeholder="Название магазина"
+  (keyup.enter)="addShop(newShop.value); newShop.value = ''"
+  class="lg-text-input"
+  id="addShopInput"
+/>
+
+<button class="btn-primary" (click)="addShop(newShop.value); newShop.value = ''">Добавить</button>
+
+<ul>
+  <li *ngFor="let shop of shops">{{shop.name}}
+    <button class="btn btn-warn" (click)="remove(shop)">Удалить</button>
+  </li>
+</ul>
