@@ -9,6 +9,13 @@ import {Shop, shops} from '../shops';
 export class ShopComponent {
   shops = [...shops];
 
+  editable = false;
+
+  saveShop(name: string, shop: Shop) {
+    if (!name) return;
+    this.editable = false;
+    shop.name = name;
+  }
 
   addShop(ttttt: string) {
     // let shop: Shop = {name: fffff};
@@ -19,4 +26,9 @@ export class ShopComponent {
     let index = this.shops.indexOf(shop);
     this.shops.splice(index, 1)
   }
+
+  edit() {
+    this.editable = !this.editable
+  }
+
 }

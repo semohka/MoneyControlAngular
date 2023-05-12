@@ -11,8 +11,17 @@
 
 <button class="btn-primary" (click)="addShop(newShop.value); newShop.value = ''">Добавить</button>
 
-<ul>
-  <li *ngFor="let shop of shops">{{shop.name}}
+<ol>
+  <li *ngFor="let shop of shops">
+    <input class="sm-text-input"
+           *ngIf="editable"
+           placeholder="edit item"
+           [value]="shop.name"
+           #editedShop
+           (keyup.enter)="saveShop(editedShop.value, shop)">
+    <span *ngIf="!editable">{{shop.name}}</span>
+
+    <button class="btn btn-edit" (click)="edit()">Редактировать</button>
     <button class="btn btn-warn" (click)="remove(shop)">Удалить</button>
   </li>
-</ul>
+</ol>

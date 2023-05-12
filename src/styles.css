@@ -10,19 +10,8 @@ body {
 }
 
 .btn {
-  color: #000;
-  background-color: #fff;
-  border: 2px solid #cecece;
   padding: .35rem 1rem .25rem 1rem;
   font-size: 1rem;
-}
-
-.btn:hover {
-  background-color: #ecf2fd;
-}
-
-.btn:active {
-  background-color: #d1e0fe;
 }
 
 .btn:focus {
@@ -32,7 +21,7 @@ body {
 
 .btn-primary {
   color: #fff;
-  background-color: #000;
+  background-color: #3a732b;
   width: 100%;
   padding: .75rem;
   font-size: 1.3rem;
@@ -40,17 +29,6 @@ body {
   margin: 1rem 0;
 }
 
-.btn-primary:hover {
-  background-color: #444242;
-}
-
-.btn-primary:focus {
-  color: #000;
-  outline: none;
-  border: #000 solid 2px;
-  background-color: #d7ecff;
-}
-
 .btn-primary:active {
-  background-color: #212020;
+  background-color: #174213;
 }
