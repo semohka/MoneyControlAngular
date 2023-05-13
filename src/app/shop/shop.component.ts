@@ -7,7 +7,14 @@ import {Shop, shops} from '../shops';
   styleUrls: ['./shop.component.css']
 })
 export class ShopComponent {
+  time: string | undefined;
   shops = [...shops];
+
+  constructor() {
+    setInterval(() => {
+      this.time = new Date().toLocaleTimeString();
+    }, 1000)
+  }
 
   editable = false;
 

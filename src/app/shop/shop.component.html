@@ -1,5 +1,6 @@
 <h2>Магазины</h2>
 <label for="addShopInput">Добавь новый магазин в список</label>
+<h4>Время: {{ time }}</h4>
 
 <input
   #newShop
@@ -12,14 +13,18 @@
 <button class="btn-primary" (click)="addShop(newShop.value); newShop.value = ''">Добавить</button>
 
 <ol>
-  <li *ngFor="let shop of shops">
+  <li *ngFor="let shop of shops;
+      let first = first;
+      let last = last;
+      let i = index"
+      [ngClass]="{first: first, last: last}">
     <input class="sm-text-input"
            *ngIf="editable"
            placeholder="edit item"
            [value]="shop.name"
            #editedShop
            (keyup.enter)="saveShop(editedShop.value, shop)">
-    <span *ngIf="!editable">{{shop.name}}</span>
+    <span *ngIf="!editable">{{i + 1}} {{shop.name}} </span>
 
     <button class="btn btn-edit" (click)="edit()">Редактировать</button>
     <button class="btn btn-warn" (click)="remove(shop)">Удалить</button>
