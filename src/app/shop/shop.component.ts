@@ -7,8 +7,15 @@ import {Shop, shops} from '../shops';
   styleUrls: ['./shop.component.css']
 })
 export class ShopComponent {
+  isCollapsed: boolean = true;
   time: string | undefined;
   shops = [...shops];
+
+  visibility: boolean = true;
+
+  toggle() {
+    this.visibility = !this.visibility
+  }
 
   constructor() {
     setInterval(() => {
@@ -17,6 +24,10 @@ export class ShopComponent {
   }
 
   editable = false;
+
+  toggleCollapse() {
+    this.isCollapsed = !this.isCollapsed
+  }
 
   saveShop(name: string, shop: Shop) {
     if (!name) return;

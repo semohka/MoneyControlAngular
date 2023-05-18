@@ -7,20 +7,27 @@
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2), 0 2.5rem 5rem 0 rgba(0, 0, 0, .1);
 }
 
+a:link {
+  text-decoration: none;
+}
+
+.tablinkFlex {
+  background-color: darkgray;
+  display: flex;
+  justify-content: space-between
+}
 
 .tablink {
   background-color: darkgray;
   color: black;
   border: none;
-  outline: none;
   cursor: pointer;
   padding: 14px 16px;
   font-size: 17px;
-  width: 20%;
 }
 
 .tablink:hover {
-  background-color: #d2d1d1;
+  background-color: #567c4d;
 }
 
 .footer {

@@ -4,29 +4,43 @@
 
 <input
   #newShop
-  placeholder="Название магазина"
+  placeholder="Название магазина &#9997;"
   (keyup.enter)="addShop(newShop.value); newShop.value = ''"
   class="lg-text-input"
   id="addShopInput"
 />
 
-<button class="btn-primary" (click)="addShop(newShop.value); newShop.value = ''">Добавить</button>
+<button class="btn-primary" (click)="addShop(newShop.value);
+newShop.value = ''">Добавить
+</button>
 
-<ol>
-  <li *ngFor="let shop of shops;
+<div [ngClass]="{invisible: visibility}">
+  <ol>
+    <li *ngFor="let shop of shops;
       let first = first;
       let last = last;
+      let even = even;
+      let odd = odd;
       let i = index"
-      [ngClass]="{first: first, last: last}">
-    <input class="sm-text-input"
-           *ngIf="editable"
-           placeholder="edit item"
-           [value]="shop.name"
-           #editedShop
-           (keyup.enter)="saveShop(editedShop.value, shop)">
-    <span *ngIf="!editable">{{i + 1}} {{shop.name}} </span>
+        [ngClass]="{first: first, last: last, even: even, odd: odd}">
+      <input class="sm-text-input"
+             *ngIf="editable"
+             placeholder="edit item"
+             [value]="shop.name"
+             #editedShop
+             (keyup.enter)="saveShop(editedShop.value, shop)">
+      <span *ngIf="!editable">{{i + 1}} {{shop.name}} </span>
 
-    <button class="btn btn-edit" (click)="edit()">Редактировать</button>
-    <button class="btn btn-warn" (click)="remove(shop)">Удалить</button>
-  </li>
-</ol>
+      <button class="btn btn-edit" (click)="edit()">Редактировать</button>
+      <button class="btn btn-warn" (click)="remove(shop)">Удалить</button>
+    </li>
+  </ol>
+</div>
+<button (click)="toggle()">Отображение</button>
+
+
+<button *ngIf="isCollapsed" (click)="toggleCollapse()">Показать</button>
+<button *ngIf="!isCollapsed" (click)="toggleCollapse()">Скрыть</button>
+<div *ngIf="!isCollapsed">
+  <p>qwerty &#x1f601;</p>
+</div>

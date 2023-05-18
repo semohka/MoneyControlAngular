@@ -30,4 +30,13 @@
   margin: 1rem 0;
 }
 
+.even {
+  background-color: #d2d1d1;
+}
 
+.odd {
+}
+
+.invisible {
+  display: none;
+}

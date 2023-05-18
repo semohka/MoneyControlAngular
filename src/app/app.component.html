@@ -3,35 +3,22 @@
 </head>
 <body>
 <header>
-  <div id="Shops" class="tabcontent">
+  <div class="tablinkFlex">
+    <a class="tablink" routerLink="/shop" id="defaultOpen">Магазин</a>
+    <a class="tablink" routerLink="/category">Категории товаров</a>
+    <a class="tablink" routerLink="/product">Продукты</a>
+    <a class="tablink" routerLink="/receipt">Чеки</a>
+    <a class="tablink" routerLink="/statistic">Статистика</a>
   </div>
-
-  <div id="Categories" class="tabcontent">
-  </div>
-
-  <div id="Product" class="tabcontent">
-  </div>
-
-  <div id="Receipt" class="tabcontent">
-  </div>
-
-  <div id="Statistic" class="tabcontent">
-  </div>
-
-  <button class="tablink" (click)="openTitle()" id="defaultOpen">Магазины</button>
-  <button class="tablink" (click)="openTitle()">Категории товаров</button>
-  <button class="tablink" (click)="openTitle()">Продукты</button>
-  <button class="tablink" (click)="openTitle()">Чеки</button>
-  <button class="tablink" (click)="openTitle()">Статистика</button>
 </header>
 
 
 <div class="main">
-  <app-shop-list></app-shop-list>
+  <router-outlet></router-outlet>
 </div>
 
 <footer class="footer">
-  <a href="https://vk.com/id2610763" class="link-semohka">Semohka</a>
+  <a href="https://vk.com/id2610763" class="link-semohka">Semohka &reg;</a>
 </footer>
 </body>
 </html>
