@@ -25,7 +25,7 @@ newShop.value = ''">Добавить
         [ngClass]="{first: first, last: last, even: even, odd: odd}">
       <input class="sm-text-input"
              *ngIf="editable"
-             placeholder="edit item"
+             placeholder="Введите название магазина"
              [value]="shop.name"
              #editedShop
              (keyup.enter)="saveShop(editedShop.value, shop)">
