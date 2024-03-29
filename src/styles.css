@@ -1,6 +1,4 @@
-body {
-  font-family: Helvetica, Arial, sans-serif;
-}
+@import "bootstrap";
 
 .btn-wrapper {
   /* flexbox */

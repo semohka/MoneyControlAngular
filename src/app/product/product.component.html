@@ -1,9 +1,30 @@
-<h2>Продукты</h2>
-<label>Добавь новый продукт в список</label>
+<div class="col-md-6">
+  <h4 class="text-center">Продукты</h4>
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="floatingTitle" placeholder="">
+    <label for="floatingTitle">Название</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="floatingPrice" placeholder="">
+    <label for="floatingPrice">Цена</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="floatingCount" placeholder="">
+    <label for="floatingCount">Количество</label>
+  </div>
+  <select class="form-select mb-3" aria-label="Default select example">
+    <option selected>Выбрать магазин</option>
+    <option value="1">ВкусВилл</option>
+    <option value="2">Лента</option>
+    <option value="3">Дикси</option>
+  </select>
+  <select class="form-select mb-3" aria-label="Default select example">
+    <option selected>Выбрать категорию</option>
+    <option value="1">Бакалея</option>
+    <option value="2">Мясная гастрономия</option>
+    <option value="3">Напитки</option>
+  </select>
+  <button type="button" class="btn btn-outline-success">Сохранить</button>
+</div>
 
-<!--<input-->
-<!--  #newProduct-->
-<!--  placeholder="Название &#9997;"-->
-<!--  (keyup.enter)="addProduct(newProduct.value); newProduct.value = ''"-->
-<!--  class="lg-text-input"-->
-<!--/>-->
+
