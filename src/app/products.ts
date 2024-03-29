@@ -6,7 +6,6 @@ export interface Product {
   image: string;
   category: string;
   shop: string;
-  rate: number;
 }
 
 export const products: Product[] = [
@@ -19,6 +18,5 @@ export const products: Product[] = [
     image: '',
     category: 'Молочная продукция',
     shop: 'ВВ',
-    rate: 4,
   },
 ];

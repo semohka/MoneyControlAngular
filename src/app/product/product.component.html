@@ -1,30 +1,65 @@
-<div class="col-md-6">
-  <h4 class="text-center">Продукты</h4>
-  <div class="form-floating mb-3">
-    <input type="text" class="form-control" id="floatingTitle" placeholder="">
-    <label for="floatingTitle">Название</label>
+<div class="row">
+  <div class="text-center my-3 lead">Продукты</div>
+  <div class="col-md-6">
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingTitle" placeholder="">
+      <label for="floatingTitle">Название</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingPrice" placeholder="">
+      <label for="floatingPrice">Цена</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingCount" placeholder="">
+      <label for="floatingCount">Количество</label>
+    </div>
+    <select class="form-select mb-3" aria-label="Default select example">
+      <option selected>Выбрать магазин</option>
+      <option value="1">ВкусВилл</option>
+      <option value="2">Лента</option>
+      <option value="3">Дикси</option>
+    </select>
+    <select class="form-select mb-3" aria-label="Default select example">
+      <option selected>Выбрать категорию</option>
+      <option value="1">Бакалея</option>
+      <option value="2">Мясная гастрономия</option>
+      <option value="3">Напитки</option>
+    </select>
+    <div class="text-center">
+      <button type="button" class="btn btn-outline-success">Сохранить</button>
+    </div>
   </div>
-  <div class="form-floating mb-3">
-    <input type="text" class="form-control" id="floatingPrice" placeholder="">
-    <label for="floatingPrice">Цена</label>
+  <div class="col-md-6">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+      </thead>
+      <tbody>
+      <!--      <tr *ngFor="let category of categories; index as i">-->
+      <!--        <th scope="row">{{ i+1 }}</th>-->
+      <!--        <td colspan="2">{{ category.name }}</td>-->
+      <!--        <td><button type="button" class="btn btn-outline-secondary"><i class="bi bi-pencil-square"></i></button></td>-->
+      <!--        <td><button type="button" class="btn btn-outline-danger"><i class="bi bi-x-square"></i></button>-->
+      <!--        </td>-->
+      <!--      </tr>-->
+      <!--      <tr>-->
+      <!--        <th scope="row">1</th>-->
+      <!--        <td>Mark</td>-->
+      <!--        <td>Otto</td>-->
+      <!--        <td>mdo</td>-->
+      <!--      </tr>-->
+      </tbody>
+    </table>
   </div>
-  <div class="form-floating mb-3">
-    <input type="text" class="form-control" id="floatingCount" placeholder="">
-    <label for="floatingCount">Количество</label>
-  </div>
-  <select class="form-select mb-3" aria-label="Default select example">
-    <option selected>Выбрать магазин</option>
-    <option value="1">ВкусВилл</option>
-    <option value="2">Лента</option>
-    <option value="3">Дикси</option>
-  </select>
-  <select class="form-select mb-3" aria-label="Default select example">
-    <option selected>Выбрать категорию</option>
-    <option value="1">Бакалея</option>
-    <option value="2">Мясная гастрономия</option>
-    <option value="3">Напитки</option>
-  </select>
-  <button type="button" class="btn btn-outline-success">Сохранить</button>
 </div>
+
+
+
+
 
 

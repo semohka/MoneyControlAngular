@@ -1,23 +1,33 @@
-<h2>Категории</h2>
-<label>Добавь новую категорию в список</label>
-<input
-  #newCategory
-  placeholder="Название категории &#9997;"
-  (keyup.enter)="addCategory(newCategory.value); newCategory.value = ''"
-  class="lg-text-input"
-/>
-
-<button class="btn-primary" (click)="addCategory(newCategory.value);
-newCategory.value = ''">Добавить
-</button>
-
-<ol>
-  <li *ngFor="let category of categories">
-    <span>{{ category.name }}</span>
-    <!--    <img src="" [alt]="category.name">-->
-    <button class="btn btn-edit">Редактировать</button>
-    <button class="btn btn-warn">Удалить</button>
-  </li>
-</ol>
-
-<button type="button" class="btn btn-danger">Danger</button>
+<div class="row">
+  <div class="text-center my-3 lead">Категории</div>
+  <div class="col-md-6">
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingTitle" placeholder=""
+             #newCategory
+             (keyup.enter)="addCategory(newCategory.value); newCategory.value = ''">
+      <label for="floatingTitle">Название</label>
+    </div>
+    <div class="text-center">
+      <button type="button" class="btn btn-outline-success"
+              (click)="addCategory(newCategory.value);
+            newCategory.value = ''"><i class="bi bi-check2"></i>
+      </button>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <table class="table table-hover">
+      <tbody>
+      <tr *ngFor="let category of categories; index as i">
+        <th scope="row">{{ i + 1 }}</th>
+        <td colspan="2">{{ category.name }}</td>
+        <td>
+          <button type="button" class="btn btn-outline-secondary"><i class="bi bi-pencil-square"></i></button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-outline-danger"><i class="bi bi-x-square"></i></button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
