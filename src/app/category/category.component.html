@@ -1,0 +1,21 @@
+<h2>Категории</h2>
+<label>Добавь новую категорию в список</label>
+<input
+  #newCategory
+  placeholder="Название категории &#9997;"
+  (keyup.enter)="addCategory(newCategory.value); newCategory.value = ''"
+  class="lg-text-input"
+/>
+
+<button class="btn-primary" (click)="addCategory(newCategory.value);
+newCategory.value = ''">Добавить
+</button>
+
+<ol>
+  <li *ngFor="let category of categories">
+    <span>{{ category.name }}</span>
+    <!--    <img src="" [alt]="category.name">-->
+    <button class="btn btn-edit">Редактировать</button>
+    <button class="btn btn-warn">Удалить</button>
+  </li>
+</ol>

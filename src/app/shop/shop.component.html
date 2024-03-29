@@ -1,6 +1,6 @@
 <h2>Магазины</h2>
 <label for="addShopInput">Добавь новый магазин в список</label>
-<h4>Время: {{ time }}</h4>
+<!--<h4>Время: {{ time }}</h4>-->
 
 <input
   #newShop
@@ -29,18 +29,22 @@ newShop.value = ''">Добавить
              [value]="shop.name"
              #editedShop
              (keyup.enter)="saveShop(editedShop.value, shop)">
-      <span *ngIf="!editable">{{i + 1}} {{shop.name}} </span>
+      <span
+        *ngIf="!editable">
+        {{shop.name}}
+      </span>
 
       <button class="btn btn-edit" (click)="edit()">Редактировать</button>
       <button class="btn btn-warn" (click)="remove(shop)">Удалить</button>
     </li>
   </ol>
 </div>
-<button (click)="toggle()">Отображение</button>
+<button (click)="toggle()">{{visibility ? 'Отобразить' : 'Скрыть'}}</button>
 
+{{ qwerty("opopopo") }}
 
-<button *ngIf="isCollapsed" (click)="toggleCollapse()">Показать</button>
-<button *ngIf="!isCollapsed" (click)="toggleCollapse()">Скрыть</button>
-<div *ngIf="!isCollapsed">
-  <p>qwerty &#x1f601;</p>
-</div>
+<!--<button *ngIf="isCollapsed" (click)="toggleCollapse()">Показать</button>-->
+<!--<button *ngIf="!isCollapsed" (click)="toggleCollapse()">Скрыть</button>-->
+<!--<div *ngIf="!isCollapsed">-->
+<!--  <p>qwerty</p>-->
+<!--</div>-->

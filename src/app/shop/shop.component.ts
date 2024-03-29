@@ -17,11 +17,11 @@ export class ShopComponent {
     this.visibility = !this.visibility
   }
 
-  constructor() {
-    setInterval(() => {
-      this.time = new Date().toLocaleTimeString();
-    }, 1000)
-  }
+  // constructor() {
+  //   setInterval(() => {
+  //     this.time = new Date().toLocaleTimeString();
+  //   }, 1000)
+  // }
 
   editable = false;
 
@@ -47,6 +47,10 @@ export class ShopComponent {
 
   edit() {
     this.editable = !this.editable
+  }
+
+  qwerty(name: string) {
+    console.log(name)
   }
 
 }
