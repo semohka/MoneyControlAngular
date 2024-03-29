@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "MoneyControlAngular:build:production"
+              "buildTarget": "MoneyControlAngular:build:production"
             },
             "development": {
-              "browserTarget": "MoneyControlAngular:build:development"
+              "buildTarget": "MoneyControlAngular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "MoneyControlAngular:build"
+            "buildTarget": "MoneyControlAngular:build"
           }
         },
         "test": {
