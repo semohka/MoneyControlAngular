@@ -19,12 +19,24 @@
       <tbody>
       <tr *ngFor="let category of categories; index as i">
         <th scope="row">{{ i + 1 }}</th>
-        <td colspan="2">{{ category.name }}</td>
-        <td>
-          <button type="button" class="btn btn-outline-secondary"><i class="bi bi-pencil-square"></i></button>
+        <td colspan="2">
+          <input
+            *ngIf="editable"
+            [value]="category.name"
+            #editedCategory
+            (keyup.enter)="saveCategory(editedCategory.value, category)">
+          <span
+            *ngIf="!editable">
+              {{category.name}}
+          </span>
         </td>
         <td>
-          <button type="button" class="btn btn-outline-danger"><i class="bi bi-x-square"></i></button>
+          <button type="button" class="btn btn-outline-secondary" (click)="edit()"><i class="bi bi-pencil-square"></i>
+          </button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-outline-danger" (click)="remove(category)"><i class="bi bi-x-square"></i>
+          </button>
         </td>
       </tr>
       </tbody>

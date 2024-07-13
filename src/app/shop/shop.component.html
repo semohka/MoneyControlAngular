@@ -1,50 +1,44 @@
-<h2>Магазины</h2>
-<label for="addShopInput">Добавь новый магазин в список</label>
-<!--<h4>Время: {{ time }}</h4>-->
-
-<input
-  #newShop
-  placeholder="Название магазина &#9997;"
-  (keyup.enter)="addShop(newShop.value); newShop.value = ''"
-  class="lg-text-input"
-  id="addShopInput"
-/>
-
-<button class="btn-primary" (click)="addShop(newShop.value);
-newShop.value = ''">Добавить
-</button>
-
-<div [ngClass]="{invisible: visibility}">
-  <ol>
-    <li *ngFor="let shop of shops;
-      let first = first;
-      let last = last;
-      let even = even;
-      let odd = odd;
-      let i = index"
-        [ngClass]="{first: first, last: last, even: even, odd: odd}">
-      <input class="sm-text-input"
-             *ngIf="editable"
-             placeholder="Введите название магазина"
-             [value]="shop.name"
-             #editedShop
-             (keyup.enter)="saveShop(editedShop.value, shop)">
-      <span
-        *ngIf="!editable">
-        {{shop.name}}
-      </span>
-
-      <button class="btn btn-edit" (click)="edit()">Редактировать</button>
-      <button class="btn btn-warn" (click)="remove(shop)">Удалить</button>
-    </li>
-  </ol>
+<div class="row">
+  <div class="text-center my-3 lead">Категории</div>
+  <div class="col-md-6">
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingTitle" placeholder=""
+             #newShop
+             (keyup.enter)="addShop(newShop.value); newShop.value = ''">
+      <label for="floatingTitle">Название</label>
+    </div>
+    <div class="text-center">
+      <button type="button" class="btn btn-outline-success"
+              (click)="addShop(newShop.value);
+            newShop.value = ''"><i class="bi bi-check2"></i>
+      </button>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <table class="table table-hover">
+      <tbody>
+      <tr *ngFor="let shop of shops; index as i">
+        <th scope="row">{{ i + 1 }}</th>
+        <td colspan="2">
+          @if(editable){
+          <input
+            [value]="shop.name"
+            #editedShop
+            (keyup.enter)="saveShop(editedShop.value, shop)">
+          }@else{
+          <span>{{shop.name}}</span>
+          }
+        </td>
+        <td>
+          <button type="button" class="btn btn-outline-secondary" (click)="edit()"><i class="bi bi-pencil-square"></i>
+          </button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-outline-danger" (click)="remove(shop)"><i class="bi bi-x-square"></i>
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
-<button (click)="toggle()">{{visibility ? 'Отобразить' : 'Скрыть'}}</button>
-
-{{ qwerty("opopopo") }}
-
-<!--<button *ngIf="isCollapsed" (click)="toggleCollapse()">Показать</button>-->
-<!--<button *ngIf="!isCollapsed" (click)="toggleCollapse()">Скрыть</button>-->
-<!--<div *ngIf="!isCollapsed">-->
-<!--  <p>qwerty</p>-->
-<!--</div>-->
