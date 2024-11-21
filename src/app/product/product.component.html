@@ -33,26 +33,31 @@
     <table class="table table-hover">
       <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col">№</th>
+        <th scope="col">Название</th>
+        <th scope="col">Цена</th>
+        <th scope="col">Количество</th>
+        <th scope="col">Магазин</th>
+        <th scope="col">Категория</th>
       </tr>
       </thead>
       <tbody>
-      <!--      <tr *ngFor="let category of categories; index as i">-->
-      <!--        <th scope="row">{{ i+1 }}</th>-->
-      <!--        <td colspan="2">{{ category.name }}</td>-->
-      <!--        <td><button type="button" class="btn btn-outline-secondary"><i class="bi bi-pencil-square"></i></button></td>-->
-      <!--        <td><button type="button" class="btn btn-outline-danger"><i class="bi bi-x-square"></i></button>-->
-      <!--        </td>-->
-      <!--      </tr>-->
-      <!--      <tr>-->
-      <!--        <th scope="row">1</th>-->
-      <!--        <td>Mark</td>-->
-      <!--        <td>Otto</td>-->
-      <!--        <td>mdo</td>-->
-      <!--      </tr>-->
+      <tr *ngFor="let product of products; index as i">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.count }}</td>
+        <td>{{ product.shop }}</td>
+        <td>{{ product.category }}</td>
+        <td>
+          <button type="button" class="btn btn-outline-secondary" (click)="edit()"><i class="bi bi-pencil-square"></i>
+          </button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-outline-danger" (click)="remove(product)"><i class="bi bi-x-square"></i>
+          </button>
+        </td>
+      </tr>
       </tbody>
     </table>
   </div>
